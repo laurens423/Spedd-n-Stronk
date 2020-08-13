@@ -2,8 +2,9 @@
 
 [ext_resource path="res://TileSets/Grasses.tres" type="TileSet" id=1]
 [ext_resource path="res://StyleBoxes/TextPopup.tres" type="StyleBox" id=2]
-[ext_resource path="res://Scrips/PopupPanel.cs" type="Script" id=3]
-[ext_resource path="res://Scrips/GUI.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/PopupPanel.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/GUI.cs" type="Script" id=4]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

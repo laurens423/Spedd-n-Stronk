@@ -16,8 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Stronk 'n Sped"
-run/main_scene="res://MoveTestScene.tscn"
+run/main_scene="res://Scenes/MoveTestScene.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1536
+window/size/height=864
+window/size/resizable=false
 
 [input]
 

@@ -59,6 +59,12 @@
   <ItemGroup>
     <Compile Include="Characters\Players\Spedd\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\SaveFileFormat\FileSaver.cs" />
+    <Compile Include="Scripts\SaveFileFormat\SaveFileFormat.cs" />
+    <Compile Include="Scripts\GUI.cs" />
+    <Compile Include="Scripts\Load.cs" />
+    <Compile Include="Scripts\PopupPanel.cs" />
+    <Compile Include="Scripts\StartNew.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

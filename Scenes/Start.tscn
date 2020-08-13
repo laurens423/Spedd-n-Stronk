@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/Background(To be replaced).jpg" type="Texture" id=1]
-[ext_resource path="res://Scrips/GUI.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/GUI.cs" type="Script" id=2]
 [ext_resource path="res://Styles/MainTheme.tres" type="Theme" id=3]
-[ext_resource path="res://Scrips/StartNew.cs" type="Script" id=4]
-[ext_resource path="res://Scrips/Load.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/StartNew.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/Load.cs" type="Script" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
