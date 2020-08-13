@@ -1,0 +1,6 @@
+C:\Git\Stronk-Spedd\.mono\temp\bin\ExportDebug\Stronk 'n Sped.dll
+C:\Git\Stronk-Spedd\.mono\temp\bin\ExportDebug\Stronk 'n Sped.pdb
+C:\Git\Stronk-Spedd\.mono\temp\obj\ExportDebug\Stronk 'n Sped.csprojAssemblyReference.cache
+C:\Git\Stronk-Spedd\.mono\temp\obj\ExportDebug\Stronk 'n Sped.csproj.CoreCompileInputs.cache
+C:\Git\Stronk-Spedd\.mono\temp\obj\ExportDebug\Stronk 'n Sped.dll
+C:\Git\Stronk-Spedd\.mono\temp\obj\ExportDebug\Stronk 'n Sped.pdb
