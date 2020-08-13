@@ -1,6 +1,0 @@
-C:\Git\Stronk-Spedd\.mono\temp\obj\Debug\Stronk 'n Sped.csprojAssemblyReference.cache
-C:\Git\Stronk-Spedd\.mono\temp\obj\Debug\Stronk 'n Sped.csproj.CoreCompileInputs.cache
-C:\Git\Stronk-Spedd\.mono\temp\bin\Debug\Stronk 'n Sped.dll
-C:\Git\Stronk-Spedd\.mono\temp\bin\Debug\Stronk 'n Sped.pdb
-C:\Git\Stronk-Spedd\.mono\temp\obj\Debug\Stronk 'n Sped.dll
-C:\Git\Stronk-Spedd\.mono\temp\obj\Debug\Stronk 'n Sped.pdb
