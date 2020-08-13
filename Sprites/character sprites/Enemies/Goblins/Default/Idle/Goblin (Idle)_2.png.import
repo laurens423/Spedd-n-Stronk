@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex"
+path="res://.import/Goblin (Idle)_2.png-2b41a81e31356854c2748bbac30c832e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Grass.png"
-dest_files=[ "res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex" ]
+source_file="res://Sprites/character sprites/Enemies/Goblins/Default/Idle/Goblin (Idle)_2.png"
+dest_files=[ "res://.import/Goblin (Idle)_2.png-2b41a81e31356854c2748bbac30c832e.stex" ]
 
 [params]
 

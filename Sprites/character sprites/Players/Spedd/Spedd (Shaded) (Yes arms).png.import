@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex"
+path="res://.import/Spedd (Shaded) (Yes arms).png-e7629c0a625cab73696c43e642955b4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Grass.png"
-dest_files=[ "res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex" ]
+source_file="res://Sprites/character sprites/Players/Spedd/Spedd (Shaded) (Yes arms).png"
+dest_files=[ "res://.import/Spedd (Shaded) (Yes arms).png-e7629c0a625cab73696c43e642955b4a.stex" ]
 
 [params]
 

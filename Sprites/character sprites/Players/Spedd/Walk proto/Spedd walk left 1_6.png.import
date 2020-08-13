@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex"
+path="res://.import/Spedd walk left 1_6.png-205dd7e681db689683649368b3e6402e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Grass.png"
-dest_files=[ "res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex" ]
+source_file="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_6.png"
+dest_files=[ "res://.import/Spedd walk left 1_6.png-205dd7e681db689683649368b3e6402e.stex" ]
 
 [params]
 

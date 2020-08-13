@@ -1,0 +1,109 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://Characters/Players/Spedd/Player.cs" type="Script" id=1]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_30.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_31.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_32.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_33.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_34.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Idle/Spedd Idle_2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_17.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_16.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_13.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_11.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_12.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_19.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_9.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Idle/Spedd Idle Look Up_2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_10.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_6.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_4.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_5.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_8.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_21.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_22.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_23.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Idle/Spedd Idle_1.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_24.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_14.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_25.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_26.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_18.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_2.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_15.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_28.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Idle/Spedd Idle Look Up_1.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_27.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_20.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_7.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_29.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_37.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_39.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_40.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_38.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_35.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_36.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_6.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_2.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_2.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_3.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_1.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_1.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_6.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_4.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_5.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_3.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_5.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_4.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/Shadow1.png" type="Texture" id=58]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 51 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 56 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "Walk Left",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Walk Right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 14 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Coin Flip",
+"speed": 6.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.1071
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 502.723, 279.86 )
+scale = Vector2( 10, 10 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.399994, -1.90735e-06 )
+frames = SubResource( 1 )
+animation = "Walk Right"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.701355, 7.39057 )
+rotation = 4.69538
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.599998, 6 )
+scale = Vector2( 0.7, 0.5 )
+z_index = -1
+texture = ExtResource( 58 )

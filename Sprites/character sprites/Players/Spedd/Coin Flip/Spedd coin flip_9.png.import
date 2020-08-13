@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex"
+path="res://.import/Spedd coin flip_9.png-5d8f45d0b76626bd07b9a5157861bc56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Grass.png"
-dest_files=[ "res://.import/Grass.png-26c6f9742a5ae2a629603d35d3e20fc3.stex" ]
+source_file="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_9.png"
+dest_files=[ "res://.import/Spedd coin flip_9.png-5d8f45d0b76626bd07b9a5157861bc56.stex" ]
 
 [params]
 
