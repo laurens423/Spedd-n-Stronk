@@ -8,14 +8,12 @@ public class GUI : Container
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-      if(GetTree().CurrentScene.Filename=="Start"){
+      if(GetTree().CurrentScene.Filename.Contains("Start")){
         
       }
-      else if(GetTree().CurrentScene.Filename.Contains("Test")){
-        dialog = GetChild<PopupPanel>(FindNode("Dialog").GetIndex());
+      else
+      {
         fps = GetChild<Label>(FindNode("FPS").GetIndex());
-        dialog.Set("text", "test een twee drie vier vijf zes zeven");
-        dialog.Popup_();
       }
     }
 
@@ -65,6 +63,7 @@ public class GUI : Container
               {
                 if(n.Name == "FPS")
                 {
+                  
                     n.Set("anchor_left", 0.25);
                     n.Set("anchor_right", 0.75); 
                     n.Set("anchor_top", 0.1); 

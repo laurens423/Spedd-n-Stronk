@@ -16,14 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Stronk 'n Sped"
-run/main_scene="res://Scenes/MoveTestScene.tscn"
+run/main_scene="res://Scenes/AlphaScene.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=1536
 window/size/height=864
-window/size/resizable=false
 
 [input]
 
@@ -45,6 +44,11 @@ move_left={
 move_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
 
