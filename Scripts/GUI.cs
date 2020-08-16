@@ -58,12 +58,14 @@ public class GUI : Container
           foreach(Node node in GetChildren())
           {
             if(node.Name == "Inventory"){
-              node.Set("anchor_left", 0.05);
-              node.Set("anchor_right", 0.3); 
-              node.Set("anchor_top", 0.6); 
-              node.Set("anchor_bottom", 0.9);
+              node.Set("anchor_left", 0.2);
+              node.Set("anchor_right", 0.8); 
+              node.Set("anchor_top", 0.3); 
+              node.Set("anchor_bottom", 0.85);
               setStandard(node);
               grid.Set("rect_size",new Vector2(((Vector2)node.Get("rect_size")).y,((Vector2)node.Get("rect_size")).y));
+              Node sprite = node.GetChild(FindNode("BagSprite").GetIndex());
+              sprite.Set("position", new Vector2(((Vector2)node.Get("rect_size")).x/2,((Vector2)node.Get("rect_size")).y/2));
             }
           }
         }
