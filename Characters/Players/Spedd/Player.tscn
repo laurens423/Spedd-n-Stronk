@@ -1,6 +1,6 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=69 format=2]
 
-[ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
+[ext_resource path="res://Characters/Players/Spedd/Player.cs" type="Script" id=1]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_30.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_31.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_32.png" type="Texture" id=4]
@@ -58,14 +58,35 @@
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_5.png" type="Texture" id=56]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_4.png" type="Texture" id=57]
 [ext_resource path="res://Sprites/Shadow1.png" type="Texture" id=58]
-[ext_resource path="res://Sprites/character sprites/Players/Spedd/AttackPlaceholder/Spedd (Shaded) (Yes arms)_2.png" type="Texture" id=60]
-[ext_resource path="res://Sprites/character sprites/Players/Spedd/AttackPlaceholder/Spedd (Shaded) (Yes arms)_1.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk up_3.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk down_1.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk up_4.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk down_3.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk up_2.png" type="Texture" id=63]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk down_2.png" type="Texture" id=64]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk down_4.png" type="Texture" id=65]
+[ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd Walk up_1.png" type="Texture" id=66]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 31 ), ExtResource( 14 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "Coin Flip",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "WalkRight",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "WalkDown",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 63 ), ExtResource( 59 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "WalkUp",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ) ],
@@ -75,18 +96,8 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 51 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 56 ), ExtResource( 52 ) ],
 "loop": true,
-"name": "Walk Left",
+"name": "WalkLeft",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "Walk Right",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 61 ), ExtResource( 60 ) ],
-"loop": false,
-"name": "AttackPlaceholder",
-"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -97,22 +108,20 @@ position = Vector2( 502.723, 279.86 )
 scale = Vector2( 10, 10 )
 script = ExtResource( 1 )
 
-[node name="Animation" type="AnimatedSprite" parent="."]
-position = Vector2( 0.127403, 0.178185 )
-z_index = 2
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.399994, -1.90735e-06 )
 frames = SubResource( 1 )
-animation = "AttackPlaceholder"
-frame = 1
+animation = "Idle"
+frame = 3
 playing = true
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.701355, 7.39057 )
 rotation = 4.69538
 shape = SubResource( 2 )
 
-[node name="Shadow" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.599998, 6 )
 scale = Vector2( 0.7, 0.5 )
-z_index = 1
+z_index = -1
 texture = ExtResource( 58 )
-[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
