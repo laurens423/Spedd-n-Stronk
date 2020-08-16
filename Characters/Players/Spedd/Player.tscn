@@ -118,7 +118,7 @@ script = ExtResource( 1 )
 [node name="Animation" type="AnimatedSprite" parent="."]
 position = Vector2( 0.399994, -1.90735e-06 )
 frames = SubResource( 1 )
-animation = "AttackPlaceholder"
+animation = "Idle"
 frame = 1
 playing = true
 
