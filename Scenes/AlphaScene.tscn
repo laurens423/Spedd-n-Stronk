@@ -32,7 +32,6 @@ tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 
 
 [node name="Player" parent="Scene" instance=ExtResource( 5 )]
 position = Vector2( 336.723, 242.86 )
-attackDamage = 100000
 
 [node name="Tree" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1228.84, 106.949 )
@@ -82,7 +81,6 @@ destructable_material = "Wood"
 [node name="Tree10" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1299.68, 284.878 )
 rotation = -0.0120873
-scale = Vector2( 1, 1 )
 script = ExtResource( 6 )
 destructable_material = "Wood"
 

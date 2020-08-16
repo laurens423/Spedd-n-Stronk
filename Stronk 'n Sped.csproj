@@ -58,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Scripts\Player.cs" />
-    <Compile Include="KinematicBody2D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\SaveFileFormat\FileSaver.cs" />
     <Compile Include="Scripts\SaveFileFormat\SaveFileFormat.cs" />
