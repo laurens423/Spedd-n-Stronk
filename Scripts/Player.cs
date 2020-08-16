@@ -53,7 +53,7 @@ public class Player : KinematicBody2D
 			switch((int)(motion.Angle()/(2*Math.PI)*360)/45){
 				case 0:
 					if(motion.x>0){
-						animation.Play("Walk Right");
+						animation.Play("WalkRight");
 					}else{
 						animation.Animation="Idle";
 					}
@@ -65,7 +65,7 @@ public class Player : KinematicBody2D
 				case 3:
 				break;
 				case 4:
-					animation.Play("Walk Left");
+					animation.Play("WalkLeft");
 				break;
 				case -1:
 				break;
