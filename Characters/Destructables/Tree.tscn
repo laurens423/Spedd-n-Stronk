@@ -7,8 +7,8 @@
 [node name="Tree" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.982161, -62.5772 )
-scale = Vector2( 5.50739, 4.648 )
+position = Vector2( 0.686362, -150.677 )
+scale = Vector2( 11.3056, 10.1542 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
