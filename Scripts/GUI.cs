@@ -79,6 +79,5 @@ public class GUI : Container
         node.Set("margin_right", 0.0); 
         node.Set("margin_top", 0.0); 
         node.Set("margin_bottom", 0.0);  
-        node.Set("theme", ResourceLoader.Load("Styles/MainTheme.tres"));
     }
 }

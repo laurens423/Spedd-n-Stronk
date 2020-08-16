@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Music/Stronks-lulaby.wav" type="AudioStream" id=2]
+[ext_resource path="res://Characters/Destructables/Stone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileSets/Grasses.tres" type="TileSet" id=4]
 [ext_resource path="res://Characters/Players/Spedd/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Destructable.cs" type="Script" id=6]
@@ -33,6 +34,9 @@ tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 
 [node name="Player" parent="Scene" instance=ExtResource( 5 )]
 position = Vector2( 872.138, 255.207 )
 z_index = 2
+
+[node name="Stone" parent="Scene" instance=ExtResource( 3 )]
+position = Vector2( 1224.12, 728.063 )
 
 [node name="Tree" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1228.84, 106.949 )
@@ -87,38 +91,6 @@ position = Vector2( 1299.68, 284.878 )
 rotation = -0.0120873
 script = ExtResource( 6 )
 destructable_material = "Wood"
-
-[node name="Tree4" parent="Scene" instance=ExtResource( 7 )]
-position = Vector2( 1500, 770.868 )
-script = ExtResource( 6 )
-destructable_material = "Stone"
-hp = 2000
-
-[node name="Tree13" parent="Scene" instance=ExtResource( 7 )]
-position = Vector2( 1459.84, 840.363 )
-z_index = 1
-script = ExtResource( 6 )
-destructable_material = "Stone"
-hp = 2000
-
-[node name="Tree14" parent="Scene" instance=ExtResource( 7 )]
-position = Vector2( 1358.35, 726.822 )
-script = ExtResource( 6 )
-destructable_material = "Stone"
-hp = 2000
-
-[node name="Tree15" parent="Scene" instance=ExtResource( 7 )]
-position = Vector2( 1284.48, 869.452 )
-z_index = 1
-script = ExtResource( 6 )
-destructable_material = "Stone"
-hp = 2000
-
-[node name="Tree5" parent="Scene" instance=ExtResource( 7 )]
-position = Vector2( 1227.07, 771.646 )
-script = ExtResource( 6 )
-destructable_material = "Stone"
-hp = 2000
 [connection signal="Destroyed" from="Scene/Tree" to="Scene/Container" method="_on_Destroyed"]
 [connection signal="Destroyed" from="Scene/Tree2" to="Scene/Container" method="_on_Destroyed"]
 [connection signal="Destroyed" from="Scene/Tree11" to="Scene/Container" method="_on_Destroyed"]
@@ -129,8 +101,3 @@ hp = 2000
 [connection signal="Destroyed" from="Scene/Tree6" to="Scene/Container" method="_on_Destroyed"]
 [connection signal="Destroyed" from="Scene/Tree7" to="Scene/Container" method="_on_Destroyed"]
 [connection signal="Destroyed" from="Scene/Tree10" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree4" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree13" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree14" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree15" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree5" to="Scene/Container" method="_on_Destroyed"]
