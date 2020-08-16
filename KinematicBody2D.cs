@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Player : KinematicBody2D
+public class KinematicBody2D : Godot.KinematicBody2D
 {
 	[Export]
 	
@@ -13,7 +13,6 @@ public class Player : KinematicBody2D
 		motion.y = Input.GetActionStrength("move_down") - Input.GetActionStrength("move_up");
 		
 		MoveAndCollide(motion.Normalized() * moveSpeed * delta);
+		}
 	}
-	
 }
-
