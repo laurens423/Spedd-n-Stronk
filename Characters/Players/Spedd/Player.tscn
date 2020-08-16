@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Coin Flip/Spedd coin flip_30.png" type="Texture" id=2]
@@ -58,7 +58,6 @@
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk left 1_5.png" type="Texture" id=56]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/Walk proto/Spedd walk right 1_4.png" type="Texture" id=57]
 [ext_resource path="res://Sprites/Shadow1.png" type="Texture" id=58]
-[ext_resource path="res://Sprites/character sprites/Players/Spedd/AttackPlaceholder/Spedd (Shaded) (Yes arms)_3.png" type="Texture" id=59]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/AttackPlaceholder/Spedd (Shaded) (Yes arms)_2.png" type="Texture" id=60]
 [ext_resource path="res://Sprites/character sprites/Players/Spedd/AttackPlaceholder/Spedd (Shaded) (Yes arms)_1.png" type="Texture" id=61]
 
@@ -68,11 +67,6 @@ animations = [ {
 "loop": false,
 "name": "Coin Flip",
 "speed": 6.0
-}, {
-"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "Walk Right",
-"speed": 10.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ) ],
 "loop": true,
@@ -84,7 +78,12 @@ animations = [ {
 "name": "Walk Left",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 61 ), ExtResource( 60 ), ExtResource( 59 ) ],
+"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Walk Right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 60 ) ],
 "loop": false,
 "name": "AttackPlaceholder",
 "speed": 5.0
@@ -103,7 +102,7 @@ position = Vector2( 0.127403, 0.178185 )
 z_index = 2
 frames = SubResource( 1 )
 animation = "AttackPlaceholder"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]

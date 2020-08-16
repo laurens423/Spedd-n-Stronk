@@ -3,23 +3,38 @@ using System;
 
 public class Destructable : StaticBody2D
 {
-   	[Export]
-    public int hp = 1000;
+    [Signal]
+    public delegate void Destroyed(string destructable_material);
 
-    private Sprite HPSprite;
+   	[Export]
+    public string destructable_material = "";
+    [Export]
+    public int hp = 1000;
+    private int maxHP;
+    private ProgressBar HPSprite;
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        HPSprite = GetChild<Sprite>(FindNode("HP").GetIndex());
+        HPSprite = GetChild<ProgressBar>(FindNode("HP").GetIndex());
         HPSprite.Hide();
+        maxHP = hp;
     }
-    public void Hit(int damage){
-        HPSprite.Show();
-        hp -= damage;
-    }
+    
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
     }
+
+    public void Hit(int damage){
+        HPSprite.Show();
+        hp -= damage;
+        HPSprite.Set("value", ((double)hp/maxHP)*100);
+        if(hp <= 0){
+            EmitSignal("Destroyed", destructable_material);
+            QueueFree();
+        }
+    }
+    
 }

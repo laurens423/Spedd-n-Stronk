@@ -4,85 +4,74 @@ using System;
 public class GUI : Container
 {
     Label fps;
-    PopupPanel dialog;
+
+
+    PackedScene slotScene = (PackedScene) ResourceLoader.Load("res://Scenes//Slot.tscn");
+    Node grid;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-      if(GetTree().CurrentScene.Filename.Contains("Start")){
-        
+      fps = GetChild<Label>(FindNode("FPS").GetIndex());
+      MarginRight = OS.GetScreenSize().x;
+      MarginBottom = OS.GetScreenSize().y;
+      grid = GetChild(FindNode("Inventory").GetIndex()).GetChild(FindNode("Grid").GetIndex());
+      
+      for(int x=0; x<5; x++){
+        for(int y=0; y<5; y++){
+          grid.AddChild(slotScene.Instance());
+
+        }
       }
-      else
-      {
-        fps = GetChild<Label>(FindNode("FPS").GetIndex());
+    }
+    
+    public void _on_Destroyed(string destructable_material){
+      foreach(Slot slot in grid.GetChildren()){
+        if(slot.material == destructable_material){
+          Vector2 slotSize = ((Vector2)slot.Get("rect_size"));
+          Texture number = ResourceLoader.Load("res://Sprites/Numbers/"+ ++slot.amount + ".png") as Texture;
+          number.Set("scale",new Vector2(((slotSize.x*0.25f)/(number.GetWidth())),((slotSize.y*0.25f)/(number.GetHeight()))));
+          number.Set("offset",new Vector2(slotSize.x*0.75f,slotSize.y*0.75f));
+          slot.GetChild(1).Set("texture",number);
+          break;
+        }
+        else if (slot.material == ""){
+          slot.material = destructable_material;
+          slot.amount++;
+          Texture texture = ResourceLoader.Load("res://icon.png") as Texture;
+          Texture number = ResourceLoader.Load("res://Sprites/Numbers/1.png") as Texture;
+          Vector2 slotSize = ((Vector2)slot.Get("rect_size"));
+          texture.Set("scale",new Vector2(((slotSize.x)/(texture.GetWidth())),((slotSize.y)/(texture.GetHeight()))));
+          number.Set("scale",new Vector2(((slotSize.x*0.25f)/(number.GetWidth())),((slotSize.y*0.25f)/(number.GetHeight()))));
+          slot.GetChild(1).Set("offset",new Vector2(slotSize.x*0.75f,slotSize.y*0.75f));
+          slot.GetChild(0).Set("texture",texture);
+          slot.GetChild(1).Set("texture",number);
+          break;
+        }
       }
+      
     }
 
     public override void _Notification(int what)
     {
         if(what==NotificationSortChildren)
         {
-            if(GetTree().CurrentScene.Filename.Contains("Start")){
-              foreach(Node n in GetChildren())
-              {
-                if(n.Name == "Title")
-                {
-                    n.Set("anchor_left", 0.25);
-                    n.Set("anchor_right", 0.75); 
-                    n.Set("anchor_top", 0.1); 
-                    n.Set("anchor_bottom", 0.25); 
-                    setStandard(n);
-                    foreach(Node c in n.GetChildren()){
-                        c.Set("anchor_left", 0.0);
-                        c.Set("anchor_right", 1.0); 
-                        c.Set("anchor_top", 0.0); 
-                        c.Set("anchor_bottom", 1.0);
-                        setStandard(c);
-                    }
-                }
-                if(n.Name == "StartNew")
-                {
-                    n.Set("anchor_left", 0.05);
-                    n.Set("anchor_right", 0.40); 
-                    n.Set("anchor_top", 0.75); 
-                    n.Set("anchor_bottom", 0.65); 
-                    setStandard(n);
-                }
-                if(n.Name == "Load")
-                {
-                    n.Set("anchor_left", 0.45);
-                    n.Set("anchor_right", 0.95); 
-                    n.Set("anchor_top", 0.75); 
-                    n.Set("anchor_bottom", 0.65); 
-                    setStandard(n);
-                }
-              }
+          foreach(Node node in GetChildren())
+          {
+            if(node.Name == "Inventory"){
+              node.Set("anchor_left", 0.05);
+              node.Set("anchor_right", 0.3); 
+              node.Set("anchor_top", 0.6); 
+              node.Set("anchor_bottom", 0.9);
+              setStandard(node);
+              grid.Set("rect_size",new Vector2(((Vector2)node.Get("rect_size")).y,((Vector2)node.Get("rect_size")).y));
             }
-            else
-            {
-              foreach(Node n in GetChildren())
-              {
-                if(n.Name == "FPS")
-                {
-                  
-                    n.Set("anchor_left", 0.25);
-                    n.Set("anchor_right", 0.75); 
-                    n.Set("anchor_top", 0.1); 
-                    n.Set("anchor_bottom", 0.25);
-                    n.Set("rect_min_size",new Vector2(300,100));
-                    setStandard(n);
-                }
-              }
-            }
+          }
         }
     }
   // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-      if(GetTree().CurrentScene.Filename.Contains("Start")){
-
-      }else{
-        fps.Text = ""+Engine.GetFramesPerSecond();
-      }
+      fps.Text = ""+Engine.GetFramesPerSecond();
     }
     
     private void setStandard(Node node){

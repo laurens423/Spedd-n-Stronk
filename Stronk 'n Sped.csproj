@@ -64,6 +64,7 @@
     <Compile Include="Scripts\GUI.cs" />
     <Compile Include="Scripts\Load.cs" />
     <Compile Include="Scripts\PopupPanel.cs" />
+    <Compile Include="Scripts\Slot.cs" />
     <Compile Include="Scripts\StartNew.cs" />
     <Compile Include="Scripts\Destructable.cs" />
   </ItemGroup>

@@ -4,8 +4,8 @@ using System;
 public class Player : KinematicBody2D
 {
 	[Export]
-	
 	public int moveSpeed = 250;
+	[Export]
 	public int attackDamage = 100;
 
 	private AnimatedSprite animation = new AnimatedSprite();
@@ -22,15 +22,17 @@ public class Player : KinematicBody2D
 		
 	}
 	public void _on_Animation_animation_finished(){
-		attacking = false;
-		animation.Animation="Idle";
+		if(!animation.Animation.Contains("Walk")){
+			attacking = false;
+			animation.Animation="Idle";
+		}
 	}
 	public override void _Input(InputEvent inputEvent){
 		if(inputEvent.IsActionPressed("attack")&& !attacking){
 			animation.Animation="AttackPlaceholder";
 			attacking = true;
 			if(collision != null){
-				GetNode<Destructable>("/root/Node2D/"+collision.Collider.Get("name").ToString()).Hit(attackDamage);
+				GetNode<Destructable>("/root/Node2D/Scene/"+collision.Collider.Get("name").ToString()).Hit(attackDamage);
 
 			}
 			//GetChild<Destructable>(FindNode(collision.Collider.Get("name").ToString()).GetIndex()
@@ -51,7 +53,7 @@ public class Player : KinematicBody2D
 			switch((int)(motion.Angle()/(2*Math.PI)*360)/45){
 				case 0:
 					if(motion.x>0){
-						animation.Animation="Walk Right";
+						animation.Play("Walk Right");
 					}else{
 						animation.Animation="Idle";
 					}
@@ -63,7 +65,7 @@ public class Player : KinematicBody2D
 				case 3:
 				break;
 				case 4:
-					animation.Animation="Walk Left";
+					animation.Play("Walk Left");
 				break;
 				case -1:
 				break;
