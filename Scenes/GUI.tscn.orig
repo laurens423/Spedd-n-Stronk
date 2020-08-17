@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+<<<<<<< Updated upstream
+[gd_scene load_steps=15 format=2]
+=======
+[gd_scene load_steps=6 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Scripts/GUI.cs" type="Script" id=1]
 [ext_resource path="res://Fonts/FPS.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Styles/GameGUI.tres" type="Theme" id=3]
+<<<<<<< Updated upstream
 [ext_resource path="res://Sprites/Gui/Inventory/background_V2_24X27.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter I.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Item Box V2.png" type="Texture" id=6]
@@ -15,6 +20,10 @@
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Map.png" type="Texture" id=13]
 
 [sub_resource type="Theme" id=1]
+=======
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Inventory.cs" type="Script" id=5]
+>>>>>>> Stashed changes
 
 [node name="Container" type="Container"]
 anchor_right = 1.0
@@ -34,6 +43,7 @@ text = "150"
 align = 1
 valign = 1
 
+<<<<<<< Updated upstream
 [node name="Inventory" type="Container" parent="."]
 visible = false
 anchor_left = 0.2
@@ -175,3 +185,7 @@ value = 100.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 8 )
 nine_patch_stretch = true
+=======
+[node name="Inventory" parent="." instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+>>>>>>> Stashed changes

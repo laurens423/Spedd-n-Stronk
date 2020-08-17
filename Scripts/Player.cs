@@ -60,7 +60,8 @@ public class Player : KinematicBody2D
 				break;
 				case 1:
 				break;
-				case 2:
+				case 2:					
+					animation.Play("WalkDown");
 				break;
 				case 3:
 				break;
@@ -70,6 +71,7 @@ public class Player : KinematicBody2D
 				case -1:
 				break;
 				case -2:
+					animation.Play("WalkUp");
 				break;
 				case -3:
 				break;

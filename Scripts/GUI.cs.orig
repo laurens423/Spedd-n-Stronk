@@ -3,6 +3,7 @@ using System;
 
 public class GUI : Container
 {
+<<<<<<< Updated upstream
 	Label fps;
 
 
@@ -51,6 +52,37 @@ public class GUI : Container
 	  
 	}
 
+	public override void _Notification(int what)
+	{
+		if(what==NotificationSortChildren)
+		{
+		  foreach(Node node in GetChildren())
+		  {
+			if(node.Name == "Inventory"){
+			  node.Set("anchor_left", 0.2);
+			  node.Set("anchor_right", 0.8); 
+			  node.Set("anchor_top", 0.3); 
+			  node.Set("anchor_bottom", 0.85);
+			  setStandard(node);
+			  grid.Set("rect_size",new Vector2(((Vector2)node.Get("rect_size")).y,((Vector2)node.Get("rect_size")).y));
+			  Node sprite = node.GetChild(FindNode("BagSprite").GetIndex());
+			  sprite.Set("position", new Vector2(((Vector2)node.Get("rect_size")).x/2,((Vector2)node.Get("rect_size")).y/2));
+			}
+		  }
+		}
+	}
+=======
+    Label fps;
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+      fps = GetChild<Label>(FindNode("FPS").GetIndex());
+      MarginRight = OS.GetScreenSize().x;
+      MarginBottom = OS.GetScreenSize().y;
+    }
+    
+    
+
     public override void _Notification(int what)
     {
         if(what==NotificationSortChildren)
@@ -63,13 +95,13 @@ public class GUI : Container
               node.Set("anchor_top", 0.3); 
               node.Set("anchor_bottom", 0.85);
               setStandard(node);
-              grid.Set("rect_size",new Vector2(((Vector2)node.Get("rect_size")).y,((Vector2)node.Get("rect_size")).y));
               Node sprite = node.GetChild(FindNode("BagSprite").GetIndex());
               sprite.Set("position", new Vector2(((Vector2)node.Get("rect_size")).x/2,((Vector2)node.Get("rect_size")).y/2));
             }
           }
         }
     }
+>>>>>>> Stashed changes
   // Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
