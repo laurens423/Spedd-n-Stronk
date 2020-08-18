@@ -52,16 +52,16 @@ public class GUI : Container
 	  
 	}
 
-    public override void _Notification(int what)
-    {
-        if(what==NotificationSortChildren)
-        {
-          foreach(Node node in GetChildren())
-          {
+	public override void _Notification(int what)
+	{
+		if(what==NotificationSortChildren)
+		{
+		  foreach(Node node in GetChildren())
+		  {
 			  setStandard(node);
-          }
-        }
-    }
+		  }
+		}
+	}
   // Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{

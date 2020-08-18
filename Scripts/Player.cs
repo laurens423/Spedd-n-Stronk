@@ -56,7 +56,7 @@ public class Player : KinematicBody2D
 			animation.Animation="AttackPlaceholder";
 			attacking = true;
 			foreach(string body in reachableBodies.Keys){
-				GetNode<Destructable>("/root/Node2D/Scene/Container/"+body).Hit(attackDamage);
+				GetNode<Destructable>("/root/Node2D/Scene/"+body).Hit(attackDamage);
 
 			}
 			//GetChild<Destructable>(FindNode(collision.Collider.Get("name").ToString()).GetIndex()
