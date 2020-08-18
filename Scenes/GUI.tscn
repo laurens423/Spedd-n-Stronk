@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/GUI.cs" type="Script" id=1]
 [ext_resource path="res://Fonts/FPS.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Styles/GameGUI.tres" type="Theme" id=3]
 [ext_resource path="res://Sprites/Gui/Inventory/background_V2_24X27.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter I.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Gui/HUD/Hotbar/Item Box V2.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Slot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Backpack.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar front.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar background.png" type="Texture" id=9]
@@ -13,8 +13,6 @@
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter H.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter M.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Map.png" type="Texture" id=13]
-
-[sub_resource type="Theme" id=1]
 
 [node name="Container" type="Container"]
 anchor_right = 1.0
@@ -26,7 +24,8 @@ __meta__ = {
 }
 
 [node name="FPS" type="Label" parent="."]
-anchor_right = 0.2
+anchor_left = 0.8
+anchor_right = 1.0
 anchor_bottom = 0.2
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 2 )
@@ -34,7 +33,7 @@ text = "150"
 align = 1
 valign = 1
 
-[node name="Inventory" type="Container" parent="."]
+[node name="Inventory" type="Control" parent="."]
 visible = false
 anchor_left = 0.2
 anchor_top = 0.3
@@ -59,118 +58,124 @@ scale = Vector2( 25, 25 )
 z_index = 1
 texture = ExtResource( 4 )
 
-[node name="HUD" type="Container" parent="."]
+[node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="BackPackMini" type="Sprite" parent="HUD"]
-position = Vector2( 60, 800 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 7 )
+[node name="HotBar" type="HBoxContainer" parent="HUD"]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="I" type="Sprite" parent="HUD"]
-position = Vector2( 60, 735 )
+[node name="BackPackMini" type="Control" parent="HUD/HotBar"]
+margin_right = 114.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackPackMini" type="Sprite" parent="HUD/HotBar/BackPackMini"]
+scale = Vector2( 7, 7 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="I" type="Sprite" parent="HUD/HotBar/BackPackMini"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
+offset = Vector2( 16, -8 )
 
-[node name="PotionMini" type="Sprite" parent="HUD"]
-position = Vector2( 1300, 800 )
-scale = Vector2( 5, 5 )
+[node name="PotionMini" type="Control" parent="HUD/HotBar"]
+margin_left = 118.0
+margin_right = 232.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( -955.727, 64.5 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PotionMini" type="Sprite" parent="HUD/HotBar/PotionMini"]
+scale = Vector2( 7, 7 )
 texture = ExtResource( 10 )
+centered = false
 
-[node name="H" type="Sprite" parent="HUD"]
-position = Vector2( 1300, 735 )
+[node name="H" type="Sprite" parent="HUD/HotBar/PotionMini"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 11 )
+offset = Vector2( 16, -8 )
 
-[node name="M" type="Sprite" parent="HUD"]
-position = Vector2( 1425, 735 )
+[node name="Box1" parent="HUD/HotBar" instance=ExtResource( 6 )]
+
+[node name="Box2" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 354.0
+margin_right = 468.0
+
+[node name="Box3" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 472.0
+margin_right = 586.0
+
+[node name="Box4" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 590.0
+margin_right = 704.0
+
+[node name="Box5" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 708.0
+margin_right = 822.0
+
+[node name="Box6" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 826.0
+margin_right = 940.0
+
+[node name="Box7" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 944.0
+margin_right = 1058.0
+
+[node name="Box8" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 1062.0
+margin_right = 1176.0
+
+[node name="Box9" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 1180.0
+margin_right = 1294.0
+
+[node name="Box10" parent="HUD/HotBar" instance=ExtResource( 6 )]
+margin_left = 1298.0
+margin_right = 1412.0
+
+[node name="MapMini" type="Control" parent="HUD/HotBar"]
+margin_left = 1416.0
+margin_right = 1536.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( -955.727, 64.5 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapMini" type="Sprite" parent="HUD/HotBar/MapMini"]
+scale = Vector2( 7, 7 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="M" type="Sprite" parent="HUD/HotBar/MapMini"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 12 )
+offset = Vector2( 16, -8 )
 
-[node name="MapMini" type="Sprite" parent="HUD"]
-position = Vector2( 1425, 800 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 13 )
-
-[node name="HotBar" type="Container" parent="HUD"]
-anchor_left = 0.07
-anchor_top = 0.85
-anchor_right = 0.8
-anchor_bottom = 1.0
-margin_left = -3.20001
-margin_top = -184.4
-margin_right = -3.19995
-margin_bottom = -184.4
-
-[node name="GridContainer" type="GridContainer" parent="HUD/HotBar"]
-anchor_right = 0.97
-anchor_bottom = 0.73
-margin_right = 40.0
-margin_bottom = 40.0
-theme = SubResource( 1 )
-
-[node name="Box1" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 70, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box2" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 180, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box3" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 290, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box4" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 400, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box5" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 510, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box6" type="Sprite" parent="HUD/HotBar/Box5"]
-position = Vector2( 18.3333, 0 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 6 )
-
-[node name="Box7" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 730, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box8" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 840, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box9" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 950, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Box10" type="Sprite" parent="HUD/HotBar"]
-position = Vector2( 1060, 70 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 6 )
-
-[node name="Health" type="Container" parent="HUD"]
+[node name="Health" type="Control" parent="HUD"]
 anchor_right = 0.4
 anchor_bottom = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Healthbar" type="TextureProgress" parent="HUD/Health"]
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_right = 40.0
-margin_bottom = 40.0
-max_value = 100.0
-step = 1.0
+anchor_right = 0.565
+anchor_bottom = 0.963
 value = 100.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 8 )

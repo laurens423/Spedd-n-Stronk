@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Slot : Panel
+public class Slot : Control
 {
 	[Export]
 	public string material = "";

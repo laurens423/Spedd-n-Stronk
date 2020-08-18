@@ -8,18 +8,26 @@
 [ext_resource path="res://Scripts/Destructable.cs" type="Script" id=6]
 [ext_resource path="res://Characters/Destructables/Tree.tscn" type="PackedScene" id=7]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 rotation = 0.00113256
 stream = ExtResource( 2 )
 autoplay = true
 
-[node name="Scene" type="Node2D" parent="."]
+[node name="Overlay" parent="." instance=ExtResource( 1 )]
 
-[node name="Container" parent="Scene" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Scene" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="Scene"]
 position = Vector2( 0, 2.51984 )
@@ -36,7 +44,8 @@ position = Vector2( 872.138, 255.207 )
 z_index = 2
 
 [node name="Stone" parent="Scene" instance=ExtResource( 3 )]
-position = Vector2( 1224.12, 728.063 )
+position = Vector2( 1231.26, 692.387 )
+destructable_material = "Stone"
 
 [node name="Tree" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1228.84, 106.949 )
@@ -91,13 +100,14 @@ position = Vector2( 1299.68, 284.878 )
 rotation = -0.0120873
 script = ExtResource( 6 )
 destructable_material = "Wood"
-[connection signal="Destroyed" from="Scene/Tree" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree2" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree11" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree12" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree3" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree8" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree9" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree6" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree7" to="Scene/Container" method="_on_Destroyed"]
-[connection signal="Destroyed" from="Scene/Tree10" to="Scene/Container" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Stone" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree2" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree11" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree12" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree3" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree8" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree9" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree6" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree7" to="Overlay" method="_on_Destroyed"]
+[connection signal="Destroyed" from="Scene/Tree10" to="Overlay" method="_on_Destroyed"]

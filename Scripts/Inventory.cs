@@ -11,7 +11,7 @@ public class Inventory : Container
     {
         grid = GetChild(FindNode("Grid").GetIndex());
         Vector2 gridSize = ((Vector2)grid.Get("rect_size"));
-        slotScene.Set("scale",new Vector2(((gridSize.x)/(slotScene.GetWidth())),((gridSize.y*0.25f)/(slotScene.GetHeight()))));
+        //slotScene.Set("scale",new Vector2(((gridSize.x)/(slotScene.GetWidth())),((gridSize.y*0.25f)/(slotScene.GetHeight()))));
 
         for(int x=0; x<5; x++){
             for(int y=0; y<5; y++){

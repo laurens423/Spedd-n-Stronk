@@ -14,38 +14,39 @@ public class GUI : Container
 	  fps = GetChild<Label>(FindNode("FPS").GetIndex());
 	  MarginRight = OS.GetScreenSize().x;
 	  MarginBottom = OS.GetScreenSize().y;
-	  grid = GetChild(FindNode("Inventory").GetIndex()).GetChild(FindNode("Grid").GetIndex());
-	  
-	  for(int x=0; x<5; x++){
-		for(int y=0; y<5; y++){
-		  grid.AddChild(slotScene.Instance());
+	  grid = GetChild(FindNode("HUD").GetIndex()).GetChild(FindNode("HotBar").GetIndex());
+	  setStandard(this);
+	  //For Grid type inventory:
+	//   for(int x=0; x<5; x++){
+	// 	for(int y=0; y<5; y++){
+	// 	  grid.AddChild(slotScene.Instance());
 
-		}
-	  }
+	// 	}
+	//   }
 	}
 	
 	public void _on_Destroyed(string destructable_material){
-	  foreach(Slot slot in grid.GetChildren()){
-		if(slot.material == destructable_material){
-		  Vector2 slotSize = ((Vector2)slot.Get("rect_size"));
-		  Texture number = ResourceLoader.Load("res://Sprites/Numbers/"+ ++slot.amount + ".png") as Texture;
-		  number.Set("scale",new Vector2(((slotSize.x*0.25f)/(number.GetWidth())),((slotSize.y*0.25f)/(number.GetHeight()))));
-		  number.Set("offset",new Vector2(slotSize.x*0.75f,slotSize.y*0.75f));
-		  slot.GetChild(1).Set("texture",number);
-		  break;
-		}
-		else if (slot.material == ""){
-		  slot.material = destructable_material;
-		  slot.amount++;
-		  Texture texture = ResourceLoader.Load("res://icon.png") as Texture;
-		  Texture number = ResourceLoader.Load("res://Sprites/Numbers/1.png") as Texture;
-		  Vector2 slotSize = ((Vector2)slot.Get("rect_size"));
-		  texture.Set("scale",new Vector2(((slotSize.x)/(texture.GetWidth())),((slotSize.y)/(texture.GetHeight()))));
-		  number.Set("scale",new Vector2(((slotSize.x*0.25f)/(number.GetWidth())),((slotSize.y*0.25f)/(number.GetHeight()))));
-		  slot.GetChild(1).Set("offset",new Vector2(slotSize.x*0.75f,slotSize.y*0.75f));
-		  slot.GetChild(0).Set("texture",texture);
-		  slot.GetChild(1).Set("texture",number);
-		  break;
+	  foreach(Node node in grid.GetChildren()){
+		  
+		if(node.Name.Contains("Box")){
+			Sprite material = node.GetChild(FindNode("Material").GetIndex()) as Sprite;
+			Sprite box = node.GetChild(FindNode("Box").GetIndex()) as Sprite;
+			Sprite numberSlot = node.GetChild(FindNode("NumberSlot").GetIndex()) as Sprite;
+		  	Vector2 slotSize = ((Vector2)node.Get("rect_size"));
+			if(((Slot)node).material == destructable_material){
+		  		Texture number = ResourceLoader.Load("res://Sprites/Numbers/"+ ++((Slot)node).amount + ".png") as Texture;
+		  		numberSlot.GetChild(0).Set("texture",number);
+		  		break;
+			}
+			else if (((Slot)node).material == ""){
+		  		((Slot)node).material = destructable_material;
+		  		((Slot)node).amount++;
+		  		Texture texture = ResourceLoader.Load("res://Sprites/Items/Materials/"+ destructable_material +".png") as Texture;
+		  		Texture number = ResourceLoader.Load("res://Sprites/Numbers/1.png") as Texture;
+		  		material.Set("texture",texture);
+		  		numberSlot.GetChild(0).Set("texture",number);
+		  		break;
+			}
 		}
 	  }
 	  
@@ -57,16 +58,7 @@ public class GUI : Container
         {
           foreach(Node node in GetChildren())
           {
-            if(node.Name == "Inventory"){
-              node.Set("anchor_left", 0.2);
-              node.Set("anchor_right", 0.8); 
-              node.Set("anchor_top", 0.3); 
-              node.Set("anchor_bottom", 0.85);
-              setStandard(node);
-              grid.Set("rect_size",new Vector2(((Vector2)node.Get("rect_size")).y,((Vector2)node.Get("rect_size")).y));
-              Node sprite = node.GetChild(FindNode("BagSprite").GetIndex());
-              sprite.Set("position", new Vector2(((Vector2)node.Get("rect_size")).x/2,((Vector2)node.Get("rect_size")).y/2));
-            }
+			  setStandard(node);
           }
         }
     }
