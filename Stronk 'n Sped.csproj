@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Characters\Destructables\Tree.cs" />
+    <Compile Include="Scripts\Interactable.cs" />
     <Compile Include="Scripts\Inventory.cs" />
     <Compile Include="Scripts\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

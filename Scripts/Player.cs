@@ -52,8 +52,7 @@ public class Player : KinematicBody2D
 			float angle = (Position+reach.Position).AngleToPoint(mouseMotion.Position)+(float)Math.PI;
 			reach.Rotation=angle;
 			test.Rotation=angle;
-		}
-		if(inputEvent.IsActionPressed("attack")&& !attacking){
+		}else if(inputEvent.IsActionPressed("attack")&& !attacking){
 			animation.Animation="AttackPlaceholder";
 			attacking = true;
 			foreach(string body in reachableBodies.Keys){
