@@ -34,7 +34,7 @@ public class GUI : Container
 			Sprite numberSlot = node.GetChild(FindNode("NumberSlot").GetIndex()) as Sprite;
 		  	Vector2 slotSize = ((Vector2)node.Get("rect_size"));
 			if(((Slot)node).material == destructable_material){
-		  		Texture number = ResourceLoader.Load("res://Sprites/Numbers/"+ ++((Slot)node).amount + ".png") as Texture;
+		  		Texture number = ResourceLoader.Load("res://Sprites/Gui/Inventory/Numbers/NUMB "+ ++((Slot)node).amount + ".png") as Texture;
 		  		numberSlot.GetChild(0).Set("texture",number);
 		  		break;
 			}
@@ -42,7 +42,7 @@ public class GUI : Container
 		  		((Slot)node).material = destructable_material;
 		  		((Slot)node).amount++;
 		  		Texture texture = ResourceLoader.Load("res://Sprites/Items/Materials/"+ destructable_material +".png") as Texture;
-		  		Texture number = ResourceLoader.Load("res://Sprites/Numbers/1.png") as Texture;
+		  		Texture number = ResourceLoader.Load("res://Sprites/Gui/Inventory/Numbers/NUMB 1.png") as Texture;
 		  		material.Set("texture",texture);
 		  		numberSlot.GetChild(0).Set("texture",number);
 		  		break;
