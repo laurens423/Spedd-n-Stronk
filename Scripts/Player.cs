@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Godot.Collections;
 
 public class Player : KinematicBody2D
 {
@@ -13,13 +14,31 @@ public class Player : KinematicBody2D
 	private Vector2 motion = new Vector2();
 	private Vector2 oldMotion = new Vector2();
 	KinematicCollision2D collision;
+	[Export]
+	Dictionary reachableBodies = new Dictionary();
+	Area2D reach;
+	Polygon2D test;
 	bool attacking;
 	public override void _Ready(){
 		animation = GetChild<AnimatedSprite>(FindNode("Animation").GetIndex());
+		reach = GetChild<Area2D>(FindNode("Reach").GetIndex());
+		test = GetChild<Polygon2D>(FindNode("Test").GetIndex());
+
 	}
 		
 	public override void _Process(float delta){
 		
+	}
+	public void _on_Reach_body_entered(PhysicsBody2D body){
+		if(body != this){
+			if(!reachableBodies.Contains(body.Name.ToString())){
+				reachableBodies.Add(body.Name.ToString(),reachableBodies.Count);
+
+			}
+		}
+	}
+	public void _on_Reach_body_exited(PhysicsBody2D body){
+		reachableBodies.Remove(body.Name.ToString());
 	}
 	public void _on_Animation_animation_finished(){
 		if(!animation.Animation.Contains("Walk")){
@@ -28,11 +47,17 @@ public class Player : KinematicBody2D
 		}
 	}
 	public override void _Input(InputEvent inputEvent){
+		if(inputEvent is InputEventMouseMotion mouseMotion){
+			//TODO: nog te verbeteren
+			float angle = (Position+reach.Position).AngleToPoint(mouseMotion.Position)+(float)Math.PI;
+			reach.Rotation=angle;
+			test.Rotation=angle;
+		}
 		if(inputEvent.IsActionPressed("attack")&& !attacking){
 			animation.Animation="AttackPlaceholder";
 			attacking = true;
-			if(collision != null){
-				GetNode<Destructable>("/root/Node2D/Scene/"+collision.Collider.Get("name").ToString()).Hit(attackDamage);
+			foreach(string body in reachableBodies.Keys){
+				GetNode<Destructable>("/root/Node2D/Scene/"+body).Hit(attackDamage);
 
 			}
 			//GetChild<Destructable>(FindNode(collision.Collider.Get("name").ToString()).GetIndex()
