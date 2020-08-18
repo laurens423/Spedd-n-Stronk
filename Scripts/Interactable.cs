@@ -11,6 +11,7 @@ public class Interactable : StaticBody2D
     public override void _Ready()
     {
         e = GetChild<Sprite>(FindNode("E").GetIndex());
+        e.Hide();
     }
     public void _on_Reach_body_entered(PhysicsBody2D body){
         e.Show();
