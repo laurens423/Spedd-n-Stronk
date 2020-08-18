@@ -76,24 +76,9 @@ animations = [ {
 "name": "Coin Flip",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "WalkRight",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 60 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 65 ) ],
-"loop": true,
-"name": "WalkDown",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 66 ), ExtResource( 63 ), ExtResource( 59 ), ExtResource( 61 ) ],
 "loop": true,
 "name": "WalkUp",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 51 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 53 ), ExtResource( 56 ), ExtResource( 52 ) ],
@@ -101,10 +86,25 @@ animations = [ {
 "name": "WalkLeft",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 60 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "WalkDown",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 68 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "AttackPlaceholder",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "WalkRight",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -119,11 +119,11 @@ script = ExtResource( 1 )
 position = Vector2( 0.399994, -1.90735e-06 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.701355, 7.39057 )
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.7, 7.5 )
 rotation = 4.69538
 shape = SubResource( 2 )
 
@@ -132,4 +132,21 @@ position = Vector2( 0.599998, 6 )
 scale = Vector2( 0.7, 0.5 )
 z_index = -1
 texture = ExtResource( 58 )
+
+[node name="Reach" type="Area2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0.7, 7.5 )
+
+[node name="Shape" type="CollisionPolygon2D" parent="Reach"]
+scale = Vector2( 0.75, 0.75 )
+z_index = 3
+polygon = PoolVector2Array( 0, 0, 10, 10, 14, 5, 15, 0, 14, -5, 10, -10 )
+
+[node name="Test" type="Polygon2D" parent="."]
+position = Vector2( 0.7, 7.5 )
+scale = Vector2( 0.37, 0.37 )
+color = Color( 1, 1, 1, 0.0745098 )
+polygon = PoolVector2Array( 0.0202675, 0.164049, 19.8338, -19.9489, 27.8223, -10.1104, 29.9246, 0.064415, 28.1587, 9.98699, 19.9179, 20.1618 )
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
+[connection signal="body_entered" from="Reach" to="." method="_on_Reach_body_entered"]
+[connection signal="body_exited" from="Reach" to="." method="_on_Reach_body_exited"]

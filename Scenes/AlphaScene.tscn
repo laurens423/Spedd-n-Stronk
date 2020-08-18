@@ -101,7 +101,6 @@ destructable_material = "Wood"
 [node name="Tree10" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1299.68, 284.878 )
 rotation = -0.0120873
-scale = Vector2( 1, 1 )
 script = ExtResource( 6 )
 destructable_material = "Wood"
 [connection signal="Destroyed" from="Scene/Stone" to="Overlay" method="_on_Destroyed"]
