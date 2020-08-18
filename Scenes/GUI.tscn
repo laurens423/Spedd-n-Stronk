@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/GUI.cs" type="Script" id=1]
 [ext_resource path="res://Fonts/FPS.tres" type="DynamicFont" id=2]
@@ -7,12 +7,15 @@
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter I.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Slot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Backpack.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar front.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar background.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar background V2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar icon Final.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Items/Health Potion.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter H.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Letter M.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Gui/HUD/Hotbar/Map.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar End.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar Back End.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Gui/HUD/Health/Healthbar/healthbar V2.png" type="Texture" id=16]
 
 [node name="Container" type="Container"]
 anchor_right = 1.0
@@ -167,16 +170,55 @@ texture = ExtResource( 12 )
 offset = Vector2( 16, -8 )
 
 [node name="Health" type="Control" parent="HUD"]
+anchor_top = 0.01
 anchor_right = 0.4
-anchor_bottom = 0.1
+anchor_bottom = 0.11
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Healthbar" type="TextureProgress" parent="HUD/Health"]
-anchor_right = 0.565
-anchor_bottom = 0.963
+anchor_left = 0.13
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = -1.0
+rect_scale = Vector2( 1.01826, 0.994893 )
 value = 100.0
-texture_under = ExtResource( 9 )
-texture_progress = ExtResource( 8 )
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 16 )
 nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarEnd" type="TextureRect" parent="HUD/Health/Healthbar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -15.0
+rect_scale = Vector2( 2.58102, 2.68991 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Health/Healthbar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -15.0
+margin_top = -1.19055
+margin_bottom = -1.19055
+rect_scale = Vector2( 2.6, 2.72 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUD/Health"]
+position = Vector2( 46, 42 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
