@@ -22,7 +22,8 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Material" type="Sprite" parent="."]
-offset = Vector2( 55, 55 )
+position = Vector2( 55, 55 )
+scale = Vector2( 4.5, 4.5 )
 
 [node name="NumberSlot" type="Sprite" parent="."]
 position = Vector2( 85, 90 )

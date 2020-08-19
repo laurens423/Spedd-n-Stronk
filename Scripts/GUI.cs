@@ -52,6 +52,12 @@ public class GUI : Container
 	  
 	}
 
+	public override void _Input(InputEvent inputEvent){
+		if(inputEvent.IsActionPressed("openInventory")){
+			
+		}
+	}
+
 	public override void _Notification(int what)
 	{
 		if(what==NotificationSortChildren)

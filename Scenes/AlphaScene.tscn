@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Music/Stronks-lulaby.wav" type="AudioStream" id=2]
 [ext_resource path="res://Characters/Destructables/Stone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileSets/Grasses.tres" type="TileSet" id=4]
 [ext_resource path="res://Characters/Players/Spedd/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Workbench.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Entrance.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Characters/Destructables/Tree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/SceneControl.cs" type="Script" id=8]
 [ext_resource path="res://Scripts/SizeControl.cs" type="Script" id=9]
+[ext_resource path="res://Scenes/Workbench.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
@@ -52,50 +53,43 @@ destructable_material = "Stone"
 
 [node name="Tree" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1228.84, 106.949 )
-destructable_material = "Wood"
 
 [node name="Tree2" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1404.73, 215.011 )
 z_index = 1
-destructable_material = "Wood"
 
 [node name="Tree11" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1400.95, 315.061 )
 z_index = 1
-destructable_material = "Wood"
 
 [node name="Tree12" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1361.31, 130.062 )
-destructable_material = "Wood"
 
 [node name="Tree3" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1099.52, 296.204 )
 z_index = 1
-destructable_material = "Wood"
 
 [node name="Tree8" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1192.07, 235.796 )
-destructable_material = "Wood"
 
 [node name="Tree9" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1201.51, 332.071 )
-destructable_material = "Wood"
 
 [node name="Tree6" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1078.81, 175.388 )
-destructable_material = "Wood"
 
 [node name="Tree7" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1299.68, 284.878 )
-destructable_material = "Wood"
 
 [node name="Tree10" parent="Scene" instance=ExtResource( 7 )]
 position = Vector2( 1299.68, 284.878 )
 rotation = -0.0120873
-destructable_material = "Wood"
 
 [node name="Workbench" parent="Scene" instance=ExtResource( 6 )]
-position = Vector2( 754.776, 133.689 )
+position = Vector2( 44.7761, 419.689 )
+
+[node name="Workbench2" parent="Scene" instance=ExtResource( 10 )]
+position = Vector2( 800.723, 174.262 )
 [connection signal="Destroyed" from="Scene/Stone" to="Overlay" method="_on_Destroyed"]
 [connection signal="Destroyed" from="Scene/Tree" to="Overlay" method="_on_Destroyed"]
 [connection signal="Destroyed" from="Scene/Tree2" to="Overlay" method="_on_Destroyed"]

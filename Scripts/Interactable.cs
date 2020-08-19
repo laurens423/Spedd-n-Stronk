@@ -15,11 +15,11 @@ public class Interactable : StaticBody2D
     }
     public void _on_Reach_body_entered(PhysicsBody2D body){
         e.Show();
-        EmitSignal("WithinReach",true);
+        EmitSignal("withinReach",true);
     }
     public void _on_Reach_body_exited(PhysicsBody2D body){
         e.Hide();
-        EmitSignal("WithinReach",false);
+        EmitSignal("withinReach",false);
     }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
